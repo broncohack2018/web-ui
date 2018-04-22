@@ -17,7 +17,8 @@
     "babel-preset-es2015-ie": "^6.7.0",
     "bulma": "^0.6.0",
     "node-sass": "^4.5.3",
-    "postcss-cli": "^4.1.1"
+    "postcss-cli": "^4.1.1",
+    "react-bulma-stepper": "^1.0.0"
   },
   "scripts": {
     "css-deploy": "npm run css-build && npm run css-postcss",
