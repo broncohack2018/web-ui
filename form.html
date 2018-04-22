@@ -9,6 +9,7 @@
    <!--Import Materialize-Stepper CSS -->
    <link rel="stylesheet" href="css/materialize-stepper.min.css">
    <link rel="stylesheet" href="css/animate.css">
+   <title>Checkout</title>
    <!-- jQuery -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
    <script src="lib/QueryData.compressed.js"></script>
@@ -17,6 +18,7 @@
   <form>
   <div class="card">
      <div class="card-content">
+      <h1>Checkout your item</h1>
         <ul class="stepper horizontal" id="horizontal">
            <li class="step active">
               <div data-step-label="Email" class="step-title waves-effect waves-dark">Step 1</div>
@@ -85,11 +87,10 @@
     </div>
   </footer>
   <!-- Materializecss compiled and minified JavaScript -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
    <!-- jQueryValidation Plugin (optional) -->
-   <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-   <script src="lib/materialize-stepper.min.js"></script>
-   <script type="text/javascript" src="lib/confirm.js"></script>
+   <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+   <script type="text/javascript" src="lib/materialize-stepper.min.js"></script>
   <script>
    function someFunction() {
       setTimeout(function(){$('#horizontal').nextStep();},1000);
@@ -101,6 +102,7 @@
       $('.stepper').activateStepper();
    });
   </script>
+  <script type="text/javascript" src="lib/confirm.js"></script>
                         
 </body>
 </html>
