@@ -8,9 +8,16 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/slide.css">
     <script type="text/javascript" src="lib/opennav.js"></script>
+
+    <!--angular-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <!--angular app scripts-->
+    <script src="app.js"></script>
+    <script src="controllers/list.js"></script>
   </head>
 
-<body>
+<body ng-controller="listController as lstctrl">
 
   <!--drawer-->
   <div id="mySidenav" class="sidenav">
@@ -69,76 +76,32 @@
     <section id="cards" class="section columns"> 
       <!--card-->
       <a onclick="openModal()"> 
-      <div class="card column">
+      <div class="card column ng-repeat="hit in lstctrl.data | filter:lstctrl.filtered" >
         <div class="card-image">
           <figure class="image is-4by3">
-            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            <img ng-src="{{hit.user.icon_url}" class="img-rounded img-responsive">
           </figure>
         </div>
+
         <div class="card-content">
-            <div class="media">
+          <div class="media">
               <div class="media-content">
-                <p class="title is-4">Item 1</p>
+                <p class="title is-4">{{hit.recipe.label}}</p>
             </div>
           </div>
 
-          <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-            <a href="#">#css</a> <a href="#">#responsive</a>
-            <br>
-          </div>
+         <div class="col text">
+          <h5><strong>Calories/serving: </strong>
+            {{(hit.recipe.calories)/(hit.recipe.yield) | number: 1}}
+          </h5>
+          <h5><strong>Recipe: </strong>
+            <a href="{{hit.recipe.url}}" target="_blank">Click me!</a>
+          </h5>
+          <h5><strong>Health Labels: </strong> <span ng-repeat="healthLabel in hit.recipe.healthLabels">{{healthLabel + " | "}}</span> </h5>
+          <h5><strong>Diets: </strong> <span ng-repeat="dietLabel in hit.recipe.dietLabels">{{dietLabel + " | "}}</span> </h5>
+          <h5><strong>Source: </strong> {{hit.recipe.source}}</h5>
         </div>
-      </div>
-      </a>
-      <!--endofcard-->
-<!--card-->
-      <a onclick="openModal()"> 
-      <div class="card column">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-            <div class="media">
-              <div class="media-content">
-                <p class="title is-4">Item 1</p>
-            </div>
-          </div>
 
-          <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-            <a href="#">#css</a> <a href="#">#responsive</a>
-            <br>
-          </div>
-        </div>
-      </div>
-      </a>
-      <!--endofcard-->
-
-      <!--card-->
-      <a onclick="openModal()"> 
-      <div class="card column">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-            <div class="media">
-              <div class="media-content">
-                <p class="title is-4">Item 1</p>
-            </div>
-          </div>
-
-          <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-            <a href="#">#css</a> <a href="#">#responsive</a>
-            <br>
-          </div>
         </div>
       </div>
       </a>
