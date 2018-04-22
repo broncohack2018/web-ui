@@ -67,7 +67,6 @@
                  Confirm Form Submission
 
                  <div id="confirm" class="step-content"></div>
-              </form>
                  <div class="step-actions">
                     <button class="waves-effect waves-dark btn blue" type="submit">SUBMIT</button>
                  </div>
@@ -76,6 +75,7 @@
         </ul>
      </div>
   </div>
+  </form>
 
   <footer class="footer">
     <div class="container">
@@ -90,11 +90,6 @@
    <script src="lib/materialize-stepper.min.js"></script>
 
   <script>
-    var d = $(":input").serializeArray();
-    jQuery.each( d, function( i, field ) {
-      $( "#confirm" ).append( field.name + ": " + field.value + "<br>" );
-    });
-
    function someFunction() {
       setTimeout(function(){$('#horizontal').nextStep();},1000);
    }
@@ -104,6 +99,14 @@
    $(document).ready(function(){
       $('.stepper').activateStepper();
    });
+  </script>
+
+  <script>
+    var d = $(":input").serializeArray();
+    $( "#confirm" ).empty();
+    jQuery.each( d, function( i, field ) {
+      $( "#confirm" ).append( field.name + ": " + field.value + "<br>" );
+    });
   </script>
                         
 </body>
