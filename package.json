@@ -13,6 +13,7 @@
   "devDependencies": {
     "autoprefixer": "^7.1.5",
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015-ie": "^6.7.0",
     "bulma": "^0.6.0",
@@ -21,6 +22,7 @@
     "react-bulma-stepper": "^1.0.0"
   },
   "scripts": {
+    "babel-version": "babel --version",
     "css-deploy": "npm run css-build && npm run css-postcss",
     "css-build": "node-sass _sass/main.scss css/main.css",
     "css-postcss": "postcss --use autoprefixer --output css/main.css css/main.css",
