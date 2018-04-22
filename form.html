@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="css/materialize-stepper.min.css">
    <!-- jQuery -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-   <script src="lib/parseparams.js"></script>
+   <script src="lib/QueryData.compressed.js"></script>
 </head>
 <body>
   <form>
@@ -36,14 +36,14 @@
               <div class="step-content">
                  <div class="row">
                     <div class="input-field col s12">
-                       <input id name="password" class="validate" required>
+                       <input id name="streetname" class="validate" required>
                        <label for="streetname">Street Name</label>
                     </div>
                 </div>
 
                 <div class="row">
                 <div class="input-field col s12">
-                    <input id name="streetname" class="validate" required>
+                    <input id name="city" class="validate" required>
                      <label for="city">City</label>
                  </div>
                 </div>
@@ -65,7 +65,7 @@
            <li class="step">
               <div class="step-title waves-effect waves-dark">Step 3</div>
               <div class="step-content">
-                 Confirmation
+                 Confirm Form Submission
 
                  <div id="confirm" class="step-content"></div>
               </form>
@@ -91,7 +91,10 @@
    <script src="lib/materialize-stepper.min.js"></script>
 
   <script>
-    document.getElementById("confirm").innerHTML = $('form').serialize();
+    var d = $(":input").serializeArray();
+    jQuery.each( d, function( i, field ) {
+      $( "#confirm" ).append( field.name + ": " + field.value + "<br>" );
+    });
 
    function someFunction() {
       setTimeout(function(){$('#horizontal').nextStep();},1000);
