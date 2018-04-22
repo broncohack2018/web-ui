@@ -4,6 +4,7 @@
 .ruby-version
 npm-debug.log
 
+
 # Folders
 
 .idea/
@@ -11,3 +12,5 @@ npm-debug.log
 _gh_pages
 _site
 node_modules
+
+
