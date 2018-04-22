@@ -8,9 +8,10 @@
    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <!--Import Materialize-Stepper CSS -->
    <link rel="stylesheet" href="css/materialize-stepper.min.css">
+   <link rel="stylesheet" href="css/animate.css">
    <!-- jQuery -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-   <script src="lib/parseparams.js"></script>
+   <script src="lib/QueryData.compressed.js"></script>
 </head>
 <body>
   <form>
@@ -36,25 +37,24 @@
               <div class="step-content">
                  <div class="row">
                     <div class="input-field col s12">
-                       <input id name="password" class="validate" required>
+                       <input type="text" name="streetname" class="validate" required>
                        <label for="streetname">Street Name</label>
                     </div>
                 </div>
 
                 <div class="row">
                 <div class="input-field col s12">
-                    <input id name="streetname" class="validate" required>
+                    <input type="text" name="city" class="validate" required>
                      <label for="city">City</label>
                  </div>
                 </div>
 
                 <div class="row">
                    <div class="input-field col s12">
-                     <input id name="zip" class="validate" required>
+                     <input type="text" name="zip" class="validate" required>
                      <label for="zip">Zip Code</label>
                     </div>
                 </div>
-
 
                  <div class="step-actions">
                     <button class="waves-effect waves-dark btn blue next-step">CONTINUE</button>
@@ -65,10 +65,9 @@
            <li class="step">
               <div class="step-title waves-effect waves-dark">Step 3</div>
               <div class="step-content">
-                 Confirmation
+                 Confirm Form Submission
 
                  <div id="confirm" class="step-content"></div>
-              </form>
                  <div class="step-actions">
                     <button class="waves-effect waves-dark btn blue" type="submit">SUBMIT</button>
                  </div>
@@ -77,6 +76,7 @@
         </ul>
      </div>
   </div>
+  </form>
 
   <footer class="footer">
     <div class="container">
@@ -89,15 +89,13 @@
    <!-- jQueryValidation Plugin (optional) -->
    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
    <script src="lib/materialize-stepper.min.js"></script>
-
+   <script type="text/javascript" src="lib/confirm.js"></script>
   <script>
-    document.getElementById("confirm").innerHTML = $('form').serialize();
-
    function someFunction() {
       setTimeout(function(){$('#horizontal').nextStep();},1000);
    }
    function someOtherFunction() {
-       return true;
+      return true;
    }
    $(document).ready(function(){
       $('.stepper').activateStepper();
