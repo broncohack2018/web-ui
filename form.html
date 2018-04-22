@@ -8,6 +8,7 @@
    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <!--Import Materialize-Stepper CSS -->
    <link rel="stylesheet" href="css/materialize-stepper.min.css">
+   <link rel="stylesheet" href="css/animate.css">
    <!-- jQuery -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
    <script src="lib/QueryData.compressed.js"></script>
@@ -88,25 +89,17 @@
    <!-- jQueryValidation Plugin (optional) -->
    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
    <script src="lib/materialize-stepper.min.js"></script>
-
+ <script type="text/javascript" src="lib/confirm.js"></script>
   <script>
    function someFunction() {
       setTimeout(function(){$('#horizontal').nextStep();},1000);
    }
    function someOtherFunction() {
-       return true;
+      return true;
    }
    $(document).ready(function(){
       $('.stepper').activateStepper();
    });
-  </script>
-
-  <script>
-    var d = $(":input").serializeArray();
-    $( "#confirm" ).empty();
-    jQuery.each( d, function( i, field ) {
-      $( "#confirm" ).append( field.name + ": " + field.value + "<br>" );
-    });
   </script>
                         
 </body>
